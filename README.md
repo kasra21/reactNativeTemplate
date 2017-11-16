@@ -1,4 +1,4 @@
-# springBootAndXamarin
+# ReactNativeTemplate
 
 This is a sample template for React-native consuming some services made with spring-boot
 
