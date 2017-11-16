@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {
+  AppRegistry,
   StyleSheet,
   TouchableHighlight,
-  Text,
-  View,
-  AppRegistry
+  Text
 } from 'react-native';
 
 export default class AddButton extends Component {
@@ -16,11 +15,6 @@ export default class AddButton extends Component {
     };
   };
 
-  onPressBtn() {
-    this.state.navigation.navigate('CreateEditUserPage',
-     {isCreate: true, getUsers: this.state.getUsersView});
-  }
-
   render() {
     return (
       <TouchableHighlight style={styles.addButton}
@@ -30,6 +24,11 @@ export default class AddButton extends Component {
         <Text style={{fontSize: 25, color: 'white'}}>+</Text>
       </TouchableHighlight>
     );
+  }
+
+  onPressBtn() {
+    this.state.navigation.navigate('CreateEditUserPage',
+     {isCreate: true, getUsers: this.state.getUsersView});
   }
 }
 

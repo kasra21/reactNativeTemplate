@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import {
+  AppRegistry,
   StyleSheet,
   TouchableHighlight,
   Image,
-  Text,
-  View,
-  AppRegistry
+  View
 } from 'react-native';
 import GetUsers from './../GetUsers';
 
@@ -14,11 +13,6 @@ export default class RefreshButton extends Component {
     super(props);
     this.state = {
     };
-  };
-
-  onPressRefresh() {
-    this.props.navigation.mainView._getUsersView.fetchUsers()
-    this.props.navigation.mainView._getUsersView.render()
   };
 
   render() {
@@ -32,6 +26,11 @@ export default class RefreshButton extends Component {
       </View>
     );
   }
+
+  onPressRefresh() {
+    this.props.navigation.mainView._getUsersView.fetchUsers()
+    this.props.navigation.mainView._getUsersView.render()
+  };
 }
 
 const styles = StyleSheet.create({
