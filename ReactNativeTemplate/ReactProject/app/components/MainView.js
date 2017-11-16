@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {
+  AppRegistry,
   StyleSheet,
-  Text,
   View,
-  ScrollView,
-  AppRegistry
+  ScrollView
 } from 'react-native';
 import AddButton from './custom/AddButton';
 import GetUsers from './GetUsers';
@@ -17,7 +16,6 @@ export default class MainView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
     };
   };
 

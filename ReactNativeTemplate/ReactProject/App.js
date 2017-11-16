@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-import {AppRegistry, View, ScrollView, StyleSheet, Text, TouchableHighlight} from 'react-native';
+import {AppRegistry, StyleSheet} from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import CreateEditUser from './app/components/CreateEditUser';
 import MainView from './app/components/MainView';
 import RefreshButton from './app/components/custom/RefreshButton';
 
+//ref bind to navigation, so that those elements can accest the refs
 const HomeScreen = ({navigation}) => (
   <MainView navigation={navigation} ref={(compo) => navigation.mainView = compo} />
 );
 
 const CreateEditUserPage = ({navigation}) => (
-  <CreateEditUser navigation={navigation} />
+  <CreateEditUser navigation={navigation} ref={(compo) => navigation.createEditView = compo} />
 );
 
+//navigation.state.params.isCreate set in AddButton --> this.state.navigation.navigate('CreateEditUserPage',
+//navigation.state.params.isUpdateUser | isReadOnly are set in GetUsers --> this.props.navigation.navigate('CreateEditUserPage',
 const RootNavigator = StackNavigator({
   Home: {
     screen: HomeScreen,
@@ -25,7 +28,7 @@ const RootNavigator = StackNavigator({
   CreateEditUserPage: {
     screen: CreateEditUserPage,
     navigationOptions: ({navigation}) => ({
-      headerTitle: (!navigation.state.params.isCreate) ? ((navigation.state.params.user === undefined) ? 'Update User' : 'User Detail') : 'Add User',
+      headerTitle: (!navigation.state.params.isCreate) ? ((navigation.state.params.isUpdateUser) ? 'Update User' : ((navigation.state.params.isReadOnly) ? 'User Detail' : '')) : 'Add User',
       headerTintColor: '#54C7FC'
     }),
   },

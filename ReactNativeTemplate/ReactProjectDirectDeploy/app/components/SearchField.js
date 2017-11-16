@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {
+  AppRegistry,
   StyleSheet,
   TextInput,
   Text,
-  View,
-  AppRegistry
+  View
 } from 'react-native';
 
 export default class SearchField extends Component {
@@ -15,6 +15,17 @@ export default class SearchField extends Component {
       searchValue: props.searchValue,
     };
   };
+
+  render() {
+    return (
+      <View style={{padding: 20}}>
+        <Text> Search: </Text>
+        <TextInput value={this.state.searchValue} underlineColorAndroid={'transparent'} style={styles.defaultInput}
+         onChangeText={(value) => this.onChangeText(value)} >
+        </TextInput>
+      </View>
+    );
+  }
 
   onChangeText(value) {
     if(value == ""){
@@ -27,17 +38,6 @@ export default class SearchField extends Component {
     }
     this.state.getUsersView.render();
   };
-
-  render() {
-    return (
-      <View style={{padding: 20}}>
-        <Text> Search: </Text>
-        <TextInput value={this.state.searchValue} style={styles.defaultInput}
-         onChangeText={(value) => this.onChangeText(value)} >
-        </TextInput>
-      </View>
-    );
-  }
 }
 
 const styles = StyleSheet.create({
