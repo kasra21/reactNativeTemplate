@@ -10,11 +10,11 @@ Either a device emulator (android or iOS) or an actually device needs to be plug
 
 the dependency for react-navigation:
 
-  npm install --save react-navigation
+  `npm install --save react-navigation`
 
 Make sure `android avd` is running.
 Then run:
 
-  react-native run-android
+  `react-native run-android`
 
 For more references for setup visit: https://www.youtube.com/watch?v=KRLLjlpy0r4
