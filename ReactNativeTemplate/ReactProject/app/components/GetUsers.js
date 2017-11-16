@@ -5,7 +5,6 @@ import {
   ListView,
   Text,
   View,
-  Button,
   Image,
   AppRegistry,
   TouchableHighlight,

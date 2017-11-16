@@ -32,7 +32,7 @@ export default class SearchField extends Component {
     return (
       <View style={{padding: 20}}>
         <Text> Search: </Text>
-        <TextInput value={this.state.searchValue}
+        <TextInput value={this.state.searchValue} style={styles.defaultInput}
          onChangeText={(value) => this.onChangeText(value)} >
         </TextInput>
       </View>
@@ -41,6 +41,10 @@ export default class SearchField extends Component {
 }
 
 const styles = StyleSheet.create({
+  defaultInput: {
+    height:40,
+    borderBottomWidth: 0.5
+  }
 });
 
 AppRegistry.registerComponent('SearchField', () => SearchField)

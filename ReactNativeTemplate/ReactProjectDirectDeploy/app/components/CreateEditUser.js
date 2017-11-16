@@ -62,29 +62,34 @@ export default class CreateEditUser extends Component {
     return (
       <View style={{padding: 20, flex: 1}}>
         <ScrollView>
-          <Text> Username: </Text>
-          <TextInput value={ this.state.newUsername }
-          editable={this.state.user === null}
-          onChangeText={(value) => this.setState({newUsername: value})}
-          />
-
-          <Text> Email: </Text>
-          <TextInput value={ this.state.newEmail }
-          editable={this.state.user === null || this.props.navigation.state.params.oldUser !== undefined}
-          onChangeText={(value) => this.setState({newEmail: value})}
-          />
-
-          <Text> First Name: </Text>
-          <TextInput value={ this.state.newFirst }
-          editable={this.state.user === null || this.props.navigation.state.params.oldUser !== undefined}
-          onChangeText={(value) => this.setState({newFirst: value})}
-          />
-
-          <Text> Last Name: </Text>
-          <TextInput value={ this.state.newLast }
-          editable={this.state.user === null || this.props.navigation.state.params.oldUser !== undefined}
-          onChangeText={(value) => this.setState({newLast: value})}
-          />
+          <View style={{marginTop: 20}}>
+            <Text> Username: </Text>
+            <TextInput value={ this.state.newUsername }
+            editable={this.state.user === null} style={styles.defaultInput}
+            onChangeText={(value) => this.setState({newUsername: value})}
+            />
+          </View>
+          <View style={{marginTop: 20}}>
+            <Text> Email: </Text>
+            <TextInput value={ this.state.newEmail } style={styles.defaultInput}
+            editable={this.state.user === null || this.props.navigation.state.params.oldUser !== undefined}
+            onChangeText={(value) => this.setState({newEmail: value})}
+            />
+          </View>
+          <View style={{marginTop: 20}}>
+            <Text> First Name: </Text>
+            <TextInput value={ this.state.newFirst } style={styles.defaultInput}
+            editable={this.state.user === null || this.props.navigation.state.params.oldUser !== undefined}
+            onChangeText={(value) => this.setState({newFirst: value})}
+            />
+          </View>
+          <View style={{marginTop: 20}}>
+            <Text> Last Name: </Text>
+            <TextInput value={ this.state.newLast } style={styles.defaultInput}
+            editable={this.state.user === null || this.props.navigation.state.params.oldUser !== undefined}
+            onChangeText={(value) => this.setState({newLast: value})}
+            />
+          </View>
         </ScrollView>
         {submitBtn}
       </View>
@@ -95,7 +100,10 @@ export default class CreateEditUser extends Component {
 const styles = StyleSheet.create({
   submitButton: {
     alignSelf: 'stretch',
-    textAlign: 'center',
+  }.
+  defaultInput: {
+    height:40,
+    borderBottomWidth: 0.5,
   }
 });
 

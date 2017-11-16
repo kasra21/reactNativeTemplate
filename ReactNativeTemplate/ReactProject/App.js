@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button, AppRegistry, View, ScrollView, StyleSheet, Text, TouchableHighlight} from 'react-native';
+import {AppRegistry, View, ScrollView, StyleSheet, Text, TouchableHighlight} from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import CreateEditUser from './app/components/CreateEditUser';
 import MainView from './app/components/MainView';
