@@ -154,7 +154,7 @@ export default class GetUsers extends Component {
   render() {
     return (
       <ListView style={{padding: 20}} dataSource={this.state.userDataSource}
-      renderRow={this.renderRow.bind(this)}>
+      renderRow={this.renderRow.bind(this)} enableEmptySections={true}>
 
       </ListView>
     );
